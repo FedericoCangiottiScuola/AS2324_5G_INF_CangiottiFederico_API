@@ -11,13 +11,13 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
             string status = "OK";
             string messagge = string.Empty;
 
-            if (firstNumber == 0)
+            if (secondNumber == 0)
             {
                 return new JsonResult(new
                 {
                     output = output,
                     status = "KO",
-                    messagge = "The first number is 0"
+                    messagge = "The second number is 0"
                 });
             }
 
