@@ -52,17 +52,23 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         [HttpGet("Bisestile")]
         public JsonResult Bisestile(int anno)
         {
-            string output = string.Empty;
-            string status = string.Empty;
+            bool output;
+            string status = "OK";
             string messagge = string.Empty;
 
-            bool isLeap = DateTime.IsLeapYear(anno);
+            if (anno % 4 == 0)
+            {
+                output = true;
+            } else
+            {
+                output = false;
+            }
 
             return new JsonResult(new
             {
-                output = isLeap,
-                status = "OK",
-                messagge = (isLeap) ? "L'anno è bisestile" : "L'anno non è bisestile"
+                output = output,
+                status = status,
+                messagge = (output) ? "L'anno è bisestile" : "L'anno non è bisestile"
             });
         }
 
