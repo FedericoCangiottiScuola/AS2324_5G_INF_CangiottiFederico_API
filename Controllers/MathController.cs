@@ -27,5 +27,21 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
                 messagge = messagge
             });
         }
+
+        [HttpGet("Potenza")]
+
+        public JsonResult Potenza(int b, int esponente)
+        {
+            string output = string.Empty;
+            string status = string.Empty;
+            string messagge = string.Empty;
+
+            return new JsonResult(new
+            {
+                output = Math.Pow(b, esponente),
+                status = status,
+                messagge = messagge
+            });
+        }
     }
 }
