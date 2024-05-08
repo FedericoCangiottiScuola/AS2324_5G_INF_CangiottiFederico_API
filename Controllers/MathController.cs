@@ -11,6 +11,16 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
             string status = "OK";
             string messagge = string.Empty;
 
+            if (firstNumber == 0)
+            {
+                return new JsonResult(new
+                {
+                    output = output,
+                    status = "KO",
+                    messagge = "The first number is 0"
+                });
+            }
+
             if (firstNumber % secondNumber == 0)
             {
                 output = "true";
@@ -41,6 +51,11 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
                 output *= b;
             }
 
+            if (esponente == 0)
+            {
+                messagge = "The result is 1 because the exponent is 0";
+            }
+
             return new JsonResult(new
             {
                 output = output,
@@ -54,7 +69,6 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         {
             bool output;
             string status = "OK";
-            string messagge = string.Empty;
 
             if (anno % 4 == 0)
             {
@@ -75,17 +89,17 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         [HttpGet("Ipotenusa")]
         public JsonResult Ipotenusa(double cateto1, double cateto2)
         {
-            string output = string.Empty;
+            double output;
             string status = string.Empty;
             string messagge = string.Empty;
 
-            double ipotenusa = Math.Sqrt(Math.Pow(cateto1, 2) + Math.Pow(cateto2, 2));
+            output = Math.Sqrt(Math.Pow(cateto1, 2) + Math.Pow(cateto2, 2));
 
             return new JsonResult(new
             {
-                output = ipotenusa,
-                status = "OK",
-                messagge = ""
+                output = output,
+                status = status,
+                messagge = messagge
             });
         }
     }
