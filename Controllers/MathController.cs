@@ -5,19 +5,20 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
     public class MathController : Controller
     {
         [HttpGet("MultiploIntero")]
-
         public JsonResult MultiploIntero(int firstNumber, int secondNumber)
         {
             string output = string.Empty;
-            string status = string.Empty;
+            string status = "OK";
             string messagge = string.Empty;
-
 
             if (firstNumber % secondNumber == 0)
             {
                 output = "true";
-                status = "OK";
                 messagge = "The first number is multiple of the second number";
+            } else
+            {
+                output = "false";
+                messagge = "The first number is not multiple of the second number";
             }
 
             return new JsonResult(new
@@ -29,7 +30,6 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         }
 
         [HttpGet("Potenza")]
-
         public JsonResult Potenza(int b, int esponente)
         {
             int output = 1;
@@ -50,7 +50,6 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         }
         
         [HttpGet("Bisestile")]
-
         public JsonResult Bisestile(int anno)
         {
             string output = string.Empty;
@@ -68,7 +67,6 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
         }
 
         [HttpGet("Ipotenusa")]
-
         public JsonResult Ipotenusa(double cateto1, double cateto2)
         {
             string output = string.Empty;
