@@ -1,0 +1,6 @@
+@AS2324_5G_INF_CangiottiFederico_API_HostAddress = http://localhost:5292
+
+GET {{AS2324_5G_INF_CangiottiFederico_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
