@@ -61,5 +61,23 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
                 messagge = (isLeap) ? "L'anno è bisestile" : "L'anno non è bisestile"
             });
         }
+
+        [HttpGet("Ipotenusa")]
+
+        public JsonResult Ipotenusa(double cateto1, double cateto2)
+        {
+            string output = string.Empty;
+            string status = string.Empty;
+            string messagge = string.Empty;
+
+            double ipotenusa = Math.Sqrt(Math.Pow(cateto1, 2) + Math.Pow(cateto2, 2));
+
+            return new JsonResult(new
+            {
+                output = ipotenusa,
+                status = "OK",
+                messagge = ""
+            });
+        }
     }
 }
