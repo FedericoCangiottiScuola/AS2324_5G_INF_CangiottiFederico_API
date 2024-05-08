@@ -32,13 +32,18 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
 
         public JsonResult Potenza(int b, int esponente)
         {
-            string output = string.Empty;
-            string status = string.Empty;
+            int output = 1;
+            string status = "OK";
             string messagge = string.Empty;
+
+            for (int i = 0; i < esponente; i++)
+            {
+                output *= b;
+            }
 
             return new JsonResult(new
             {
-                output = Math.Pow(b, esponente),
+                output = output,
                 status = status,
                 messagge = messagge
             });
