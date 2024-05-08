@@ -4,9 +4,9 @@ namespace AS2324_5G_INF_CangiottiFederico_API.Controllers
 {
     public class MathController : Controller
     {
-        [HttpGet("GetDivisione")]
+        [HttpGet("MultiploIntero")]
 
-        public JsonResult MultiploIntero(float firstNumber, float secondNumber)
+        public JsonResult MultiploIntero(int firstNumber, int secondNumber)
         {
             string output = string.Empty;
             string status = string.Empty;
